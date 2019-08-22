@@ -17,7 +17,7 @@ const LOGIN_MUTATION = gql`
        }
    }
 `
-const Login = () => {
+const Login = (props) => {
     const [state, setState] = React.useState({
         login: true,
         email: '',
@@ -28,7 +28,7 @@ const Login = () => {
     const confirm = async (data) => {
         const { token } = state.login ? data.login : data.signup;
         saveUserData(token);
-        // props.history.push('/');
+        props.history.push('/');
     }
     const saveUserData = token => {
         localStorage.setItem(AUTH_TOKEN, token)

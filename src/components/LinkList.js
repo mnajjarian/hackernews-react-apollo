@@ -87,7 +87,6 @@ const LinkList = (props) => {
 
   const nextPage = (data) => {
     const page = parseInt(props.match.params.page, 10);
-    console.log(page, data.feed)
     if(page <= data.feed.count / LINKS_PER_PAGE) {
       const nextPage = page + 1;
       props.history.push(`/new/${nextPage}`)

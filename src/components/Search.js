@@ -1,5 +1,5 @@
 import React from 'react';
-import { withApollo, Mutation} from 'react-apollo';
+import { withApollo} from 'react-apollo';
 import Link from './Link';
 import gql from 'graphql-tag';
 
@@ -9,6 +9,7 @@ const FEED_SEARCH_QUERY = gql`
             links {
                 id
                 url
+                createdAt
                 description
                 postedBy {
                     id
